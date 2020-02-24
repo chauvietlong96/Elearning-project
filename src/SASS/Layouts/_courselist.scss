@@ -1,0 +1,28 @@
+.course-list {
+    .course-list__title {
+        color: #f98012;
+        font-size: 30px;
+    }
+    .course-list__describe {
+        color: black;
+        font-size: 16px;
+    }
+    .course-list__container {
+        width: 100%;
+        margin: 0 auto;
+        .course-item {
+            margin: 16px;
+            .course-item__media {
+                height: 270px;
+                transition: all 0.4s linear;
+                overflow: hidden !important;
+                border-bottom: 2px solid black;
+                box-sizing: border-box;
+                &:hover {
+                    transform: scale(1.1);
+                    opacity: 0.7;
+                }
+            }
+        }
+    }
+}

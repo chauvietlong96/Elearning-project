@@ -1,0 +1,95 @@
+.falcuties{
+    text-align: center;
+}
+.falcuties__item{
+    margin: auto;
+    width: 80%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.myCard{
+    height: 200px;
+    width: 200px;
+    margin: 30px 30px;
+    border: black solid 1px;
+    border-radius: 50%;
+    position: relative;
+    & > h4 {
+        color: #f8071e;
+        align-items: center;
+        justify-content: center;
+        font-size: 19px;
+        opacity: 0;
+        transition: all 1s linear 0s;
+    }
+}
+.myCard__item1 {
+    background-image: url(http://learningzone.themescustom.com/theme/image.php/learningzone/theme/1556102214/faculty1image);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    justify-content: center;
+    transition: all 1s linear  0s;
+    opacity: 1;
+    &:hover {
+        transform: scale(1.2);
+        opacity: 0.5;
+        & h4 {
+            opacity: 1;
+        }
+    }
+}
+.myCard__item2 {
+    background-image: url(http://learningzone.themescustom.com/theme/image.php/learningzone/theme/1556102214/faculty2image);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    justify-content: center;
+    transition: all 1s linear  0s;
+    opacity: 1;
+    &:hover {
+        transform: scale(1.2);
+        opacity: 0.5;
+        & h4 {
+            opacity: 1;
+        }
+    }
+}
+.myCard__item3 {
+    background-image: url(http://learningzone.themescustom.com/theme/image.php/learningzone/theme/1556102214/faculty3image);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    justify-content: center;
+    transition: all 1s linear  0s;
+    opacity: 1;
+    &:hover {
+        transform: scale(1.2);
+        opacity: 0.5;
+        & h4 {
+            opacity: 1;
+        }
+    }
+}
+.myCard__item4 {
+    background-image: url(http://learningzone.themescustom.com/theme/image.php/learningzone/theme/1556102214/faculty4image);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    justify-content: center;
+    transition: all 1s linear  0s;
+    opacity: 1;
+    &:hover {
+        transform: scale(1.2);
+        opacity: 0.5;
+        & h4 {
+            opacity: 1;
+        }
+    }
+}

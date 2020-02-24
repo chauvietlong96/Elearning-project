@@ -1,0 +1,41 @@
+.footer{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    .footer_header {
+        font-size: 30px;
+    }
+
+}
+.footer__item{
+    width: 25%;
+    padding: 30px 30px;
+    & ul{
+        list-style: none;
+    }
+    .footer__info__detail  a{
+        color: black;
+        &:hover {
+            color: chocolate;
+        }
+    }
+    .footer__student__detail a{
+        color: black;
+        &:hover {
+            color: chocolate;
+        }
+    }
+}
+.instag__detail{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+}
+.instag__detail img{
+    width: 100%;
+    height: 100px;
+    
+}

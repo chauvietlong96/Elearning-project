@@ -1,0 +1,30 @@
+export const GET_COURSES = "GET_COURSES";
+export const SEARCH_COURSE ="SEARCH_COURSE";
+export const COURSE_DETAIL = "COURSE_DETAIL";
+export const GET_CURRENT_USER = "GET_CURRENT_USER";
+export const GET_MENU = "GET_MENU";
+export const GET_COURSE_FROM_MENU="GET_COURSE_FROM_MENU";
+
+export const GET_USERS = "GET_USERS";
+
+export const GET_USER_PROFILE = "GET_USER_PROFILE";
+
+export const GET_USERS_LIST = "GET_USERS_LIST";
+
+export const EDIT_USER = "EDIT_USER";
+
+export const SEARCH_USER = "SEARCH_USER";
+
+export const GET_COURSE_DETAIL = "GET_COURSE_DETAIL";
+
+export const CHUA_GHI_DANH = "CHUA_GHI_DANH";
+
+export const DA_GHI_DANH = "DA_GHI_DANH";
+
+export const CHO_XET_DUYET = "CHO_XET_DUYET";
+
+export const KHOA_HOC_CHUA_GHI_DANH = "KHOA_HOC_CHUA_GHI_DANH";
+
+export const KHOA_HOC_DA_GHI_DANH = "KHOA_HOC_DA_GHI_DANH";
+
+export const KHOA_HOC_CHO_XET_DUYET = "KHOA_HOC_CHO_XET_DUYET";

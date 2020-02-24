@@ -1,0 +1,50 @@
+.my-carousel {
+    .my-carousel__content {
+        position: absolute;
+        top: 50%;
+        left: 9%;
+        width: 30%;
+        z-index: 2;
+        transform: translateY(-30%);
+        & > p:nth-child(1) {
+            font-weight: bold;
+            font-size: 24px;
+        }
+        .my-carousel__content__btn {
+            padding: 10px;
+            background: #f98012;
+            border-radius: 20px;
+            border: none;
+            color: white;
+            font-weight: bold;
+            &:hover {
+                background: #ff9800;
+            }
+        }
+    }
+}
+
+.carousel-bottom {
+    background-image: url('http://learningzone.themescustom.com/theme/image.php/learningzone/theme/1556102214/numbersbg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    text-align: center;
+    padding: 56px 0px;
+    .carousel-bottom__title {
+        font-weight: bold;
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+    .carousel-bottom__statistic {
+        .carousel-bottom__item {
+            .carousel-bottom__item__text {
+                & > span:nth-child(1) {
+                    font-weight: bold;
+                    font-size: 28px;
+                    color: white;
+                }
+            }
+        }
+    }
+}

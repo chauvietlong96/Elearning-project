@@ -1,0 +1,28 @@
+.admin-content {
+    margin-left: 20%;
+    width: 75%;
+    .admin-content-header {
+        position: sticky;
+        top: 88px;
+        width: 100%;
+        background: white;
+    }
+    .my-table{
+        td {
+            vertical-align: middle;
+        }
+    }
+    .my-functional-btn {
+        background-color: #f98012;
+        color: #000000;
+        border: none;
+        border-radius: unset;
+        &:hover {
+            background-color: #ffb14a;
+        }
+    }
+    .my-search-btn {
+        @extend .my-functional-btn;
+        background-color: #ffb14a;
+    }
+}

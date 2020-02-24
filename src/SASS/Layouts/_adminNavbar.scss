@@ -1,0 +1,38 @@
+.sideBar {
+    position: fixed;
+    left: 0;
+    top: 0px;
+    width: 15%;
+    z-index: 1002;
+    background-color: #f98012cc;
+    .sideBar-title {
+        color: white;
+        padding: 5px 0px;
+        font-size: 34px;
+    }
+    .admin-navbar {
+        padding: 0px;
+        .admin-navbar-nav {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            .nav-item {
+                margin: 10px 0px;
+                &:hover {
+                    background-color: #f98012;
+                }
+                & .is-active {
+                    background-color: #f98012;
+                }
+                .nav-link {
+                    color: #000000;
+                }
+                .btn-title {
+                    text-decoration: none;
+                    color: #000000;
+                }
+            }
+            
+        }
+    }
+}

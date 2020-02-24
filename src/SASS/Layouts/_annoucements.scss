@@ -1,0 +1,52 @@
+.announcements {
+    background: #d6d6d6;
+    margin-top: 50px;
+    .announcements__title {
+        p {
+            font-size: 35px;
+            border-bottom: 1px dashed rgba(160,160,160,.4);
+        }
+        button {
+            background: white;
+            padding: 10px;
+            border-radius: 20px;
+            border: none;
+            transition: all 0.8s;
+            &:hover {
+                background: #f98012;
+                color: white;
+            }
+        }
+    }
+
+    .announcements__slide {
+        .my-indicators {
+            bottom: -25%;
+            li {
+                width: 10px;
+                height: 10px;
+                background: #f98012;
+                border: unset;
+                border-radius: 50%;
+            }
+        }
+        .carousel-inner {
+            .carousel-item {
+                img {
+                    border: 3px solid white;
+                    border-radius: 50%;
+                    width: 50px;
+                    height: 50px;
+                }
+                a {
+                    text-decoration: none;
+                    color: #f98012;
+                    transition: color 0.5s linear;
+                }
+                a:hover {
+                    color: black;
+                }
+            }
+        }
+    }
+}
