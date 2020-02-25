@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import {connect} from "react-redux";
 import {getUsers} from "../../../Actions/Admin";
-import {khoaHocChuaGhiDanh} from '../../../Actions/adminGhiDanh';
+import {khoaHocDaGhiDanh} from '../../../Actions/adminGhiDanh';
 
-class KhoaHocChuaGhiDanh extends Component {
+class RegisteredCourse extends Component {
 
     constructor (props) {
         super(props);
@@ -23,17 +23,17 @@ class KhoaHocChuaGhiDanh extends Component {
     }
 
     onSearch = (maKhoaHoc) => {
-        this.props._khoaHocChuaGhiDanh(maKhoaHoc)
+        this.props._khoaHocDaGhiDanh(maKhoaHoc)
     }
 
     render() {
 
-        const {users, khoaHocChuaGhiDanh} = this.props;
+        const {users, khoaHocDaGhiDanh} = this.props;
         const elmUser = users.map( (user, index) => {
             return <option value={user.taiKhoan} key={index}>{user.taiKhoan}</option>
         })
         
-        const elmChuaGhiDanh = khoaHocChuaGhiDanh.map( (khoaHoc, index) => {
+        const elmDaGhiDanh = khoaHocDaGhiDanh.map( (khoaHoc, index) => {
             return (
                 <tr>
                     <td>{khoaHoc.maKhoaHoc}</td>
@@ -53,7 +53,7 @@ class KhoaHocChuaGhiDanh extends Component {
                 </select>
 
                 <button className="btn btn-success" onClick={() => this.onSearch(this.state)}>Search</button>
-                </div>
+              </div>
                 <table className="table table-striped">
                     <thead>
                         <tr>
@@ -64,7 +64,7 @@ class KhoaHocChuaGhiDanh extends Component {
                         </tr>
                     </thead>
                 <tbody>
-                    {elmChuaGhiDanh}
+                    {elmDaGhiDanh}
                 </tbody>
             </table>
             </div>
@@ -75,7 +75,7 @@ class KhoaHocChuaGhiDanh extends Component {
 const mapStateToProps = (state) => {
     return {
         users: state.users,
-        khoaHocChuaGhiDanh: state.khoaHocChuaGhiDanh,
+        khoaHocDaGhiDanh: state.khoaHocDaGhiDanh,
     }
 }
 
@@ -84,10 +84,10 @@ const mapDispatchToProps = (dispatch) => {
         _getUsers: () => {
             dispatch(getUsers())
         },
-        _khoaHocChuaGhiDanh: (maKhoaHoc) => {
-            dispatch(khoaHocChuaGhiDanh(maKhoaHoc))
+        _khoaHocDaGhiDanh: (maKhoaHoc) => {
+            dispatch(khoaHocDaGhiDanh(maKhoaHoc))
         }
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(KhoaHocChuaGhiDanh)
+export default connect(mapStateToProps, mapDispatchToProps)(RegisteredCourse)

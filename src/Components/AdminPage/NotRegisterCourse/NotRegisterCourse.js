@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import {khoaHocChoXetDuyet} from '../../../Actions/adminGhiDanh';
 import {connect} from "react-redux";
 import {getUsers} from "../../../Actions/Admin";
+import {khoaHocChuaGhiDanh} from '../../../Actions/adminGhiDanh';
 
-class KhoaHocChoXetDuyet extends Component {
+class NotRegisterCourse extends Component {
+
     constructor (props) {
         super(props);
         this.state = {
@@ -22,17 +23,17 @@ class KhoaHocChoXetDuyet extends Component {
     }
 
     onSearch = (maKhoaHoc) => {
-        this.props._khoaHocChoXetDuyet(maKhoaHoc)
+        this.props._khoaHocChuaGhiDanh(maKhoaHoc)
     }
 
     render() {
 
-        const {users, khoaHocChoXetDuyet} = this.props;
+        const {users, khoaHocChuaGhiDanh} = this.props;
         const elmUser = users.map( (user, index) => {
             return <option value={user.taiKhoan} key={index}>{user.taiKhoan}</option>
         })
         
-        const elmChoXetDuyet = khoaHocChoXetDuyet.map( (khoaHoc, index) => {
+        const elmChuaGhiDanh = khoaHocChuaGhiDanh.map( (khoaHoc, index) => {
             return (
                 <tr>
                     <td>{khoaHoc.maKhoaHoc}</td>
@@ -47,7 +48,7 @@ class KhoaHocChoXetDuyet extends Component {
                 <div className="admin-content-header">
                 <lable htmlFor="" className="px-3">Tài khoản:</lable>
                 <select name="TaiKhoan" onChange={this.onChange} className="px-3 mx-3">
-                    <option selected disabled>Chọn tài khoản</option>
+                    <option selected disabled>Chọn danh mục</option>
                     {elmUser}
                 </select>
 
@@ -63,7 +64,7 @@ class KhoaHocChoXetDuyet extends Component {
                         </tr>
                     </thead>
                 <tbody>
-                    {elmChoXetDuyet}
+                    {elmChuaGhiDanh}
                 </tbody>
             </table>
             </div>
@@ -74,7 +75,7 @@ class KhoaHocChoXetDuyet extends Component {
 const mapStateToProps = (state) => {
     return {
         users: state.users,
-        khoaHocChoXetDuyet: state.khoaHocChoXetDuyet,
+        khoaHocChuaGhiDanh: state.khoaHocChuaGhiDanh,
     }
 }
 
@@ -83,11 +84,10 @@ const mapDispatchToProps = (dispatch) => {
         _getUsers: () => {
             dispatch(getUsers())
         },
-        _khoaHocChoXetDuyet: (maKhoaHoc) => {
-            dispatch(khoaHocChoXetDuyet(maKhoaHoc))
+        _khoaHocChuaGhiDanh: (maKhoaHoc) => {
+            dispatch(khoaHocChuaGhiDanh(maKhoaHoc))
         }
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(KhoaHocChoXetDuyet)
-
+export default connect(mapStateToProps, mapDispatchToProps)(NotRegisterCourse)

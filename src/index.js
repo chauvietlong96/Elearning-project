@@ -31,14 +31,13 @@ const store = createStore(
 ReactDOM.render(
     <Provider store={store}>
         <Router>
-        
             <Route exact path="/" component={App} />
             <Route exact path="/sign-in" component={SignIn} />
             <Route exact path="/sign-up" component={SignUp} />
             <Route exact path="/course-detail" component={CourseDetail} />
             <Route exact path="/current-user/:taiKhoan" component={UserProfile} />
             <Route exact path="/search-course" component={SearchCourse} />
-            <Route  path="/admin" component={AdminPage} />
+            <Route exact path="/admin" component={AdminPage} />
         </Router>
     </Provider>
     , document.getElementById('root'));

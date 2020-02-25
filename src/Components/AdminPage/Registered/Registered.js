@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
+import {connect} from "react-redux";
 import {getMenuCourse, getCourses} from '../../../Actions/Course';
-import {getChoXetDuyet, xacThucGhiDanh} from '../../../Actions/adminGhiDanh';
+import {getDaGhiDanhKhoaHoc} from '../../../Actions/adminGhiDanh';
 import _ from "lodash";
 
-
-class ChuaGhiDanh extends Component {
+class Registered extends Component {
 
     constructor(props) {
         super(props);
@@ -16,9 +15,9 @@ class ChuaGhiDanh extends Component {
     }
 
     componentDidMount() {
-        this.props._getCourses()
-        this.props._getCourseCate()
-        this.onSearch()
+        this.props._getCourses();
+        this.props._getCourseCate();
+        this.onSearch();
     }
 
     onChange = (e) => {
@@ -30,33 +29,29 @@ class ChuaGhiDanh extends Component {
 
     onSearch = () => {
         const maKhoaHoc = _.omit(this.state, ["maDanhMuc"])
-        this.props._getChoXetDuyet(maKhoaHoc)
+        this.props._getDaGhiDanhKhoaHoc(maKhoaHoc)
     }
 
-    xacNhan = (data) => {
-        xacThucGhiDanh(data)
-    }
+    
 
     render() {
 
-        const {courseCate,courses, choXetDuyetList } = this.props;
+        const {courseCate,courses, daGhiDanhList } = this.props;
         const elmCate = courseCate.map( (cate, index) => {
-            return <option key={index} value={cate.maDanhMuc}>{cate.tenDanhMuc}</option>
+            return  <option key={index} value={cate.maDanhMuc}>{cate.tenDanhMuc}</option>
         })
 
         const elmCourseByCate = courses.filter( (course) => this.state.maDanhMuc === course.danhMucKhoaHoc.maDanhMucKhoahoc).map((course, index) => {
             return <option key={index} value={course.maKhoaHoc}>{course.maKhoaHoc}</option>
         })
 
-        const elmChoXetDuyet = choXetDuyetList.map( (item, index) => {
+        const elmDaGhiDanh = daGhiDanhList.map( (item, index) => {
             return (
                 <tr>
                     <td>{item.taiKhoan}</td>
                     <td>{item.matKhau}</td>
                     <td>{item.biDanh}</td>
-                    <td>
-                        <button className="btn btn-primary" onClick={() => this.xacNhan({maKhoaHoc: this.state.MaKhoaHoc, taiKhoan: item.taiKhoan})}>Xác nhận ghi danh</button>
-                    </td>
+                    
             </tr>
             )
             
@@ -65,15 +60,15 @@ class ChuaGhiDanh extends Component {
         return (
             <div className="admin-content">
                 <div className="admin-content-header">
-                <lable htmlFor="">Danh mục</lable>
-                <select name="maDanhMuc" onChange={this.onChange}>
-                    {/* <option selected disabled>Chọn danh mục</option> */}
+                <lable htmlFor="" className="px-3">Danh mục</lable>
+                <select name="maDanhMuc" onChange={this.onChange} className="mx-3">
+                {/* <option selected disabled>Chọn danh mục</option> */}
                     {elmCate}
                 </select>
 
-                <lable htmlFor="">Khóa học</lable>
-                <select name="MaKhoaHoc" onChange={this.onChange}>
-                    {/* <option selected disabled>Chọn khóa học</option> */}
+                <lable htmlFor="" className="px-3">Khóa học:</lable>
+                <select name="MaKhoaHoc" onChange={this.onChange} className="mx-3">
+                    {/* <option selected>Chọn khóa học</option> */}
                     {elmCourseByCate}
                 </select>
 
@@ -85,10 +80,11 @@ class ChuaGhiDanh extends Component {
                         <th>Tài khoản</th>
                         <th>Mật khẩu</th>
                         <th>Bí danh</th>
+                        <th></th>
                         </tr>
                     </thead>
                 <tbody>
-                    {elmChoXetDuyet}
+                    {elmDaGhiDanh}
                 </tbody>
             </table>
             </div>
@@ -100,7 +96,7 @@ const mapStateToProps = (state) => {
     return {
         courseCate: state.courseMenu,
         courses: state.courses,
-        choXetDuyetList: state.choXetDuyetList,
+        daGhiDanhList: state.daGhiDanhList,
     }
 }
 
@@ -112,10 +108,9 @@ const mapDispatchToProps = (dispatch) => {
         _getCourses: () => {
             dispatch(getCourses())
         },
-        _getChoXetDuyet: (maKhoaHoc) => {
-            dispatch(getChoXetDuyet(maKhoaHoc))
+        _getDaGhiDanhKhoaHoc: (maKhoaHoc) => {
+            dispatch(getDaGhiDanhKhoaHoc(maKhoaHoc))
         }
     }
 }
-
-export default connect(mapStateToProps, mapDispatchToProps)(ChuaGhiDanh)
+export default connect(mapStateToProps, mapDispatchToProps)(Registered)

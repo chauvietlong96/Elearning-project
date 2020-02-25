@@ -20,19 +20,19 @@ export default class Footer extends Component {
                     <div className="footer__info__detail">
                         <ul>
                             <li>
-                                <a href="">About Us</a>
+                                <a href="/#">About Us</a>
                             </li>
                             <li>
-                                <a href="">Our Stories</a>
+                                <a href="/#">Our Stories</a>
                             </li>
                             <li>
-                                <a href="">My Account</a>
+                                <a href="/#">My Account</a>
                             </li>
                             <li>
-                                <a href="">Our History</a>
+                                <a href="/#">Our History</a>
                             </li>
                             <li>
-                                <a href="">Sprcialist Info</a>
+                                <a href="/#">Sprcialist Info</a>
                             </li>
                         </ul>
                     </div>

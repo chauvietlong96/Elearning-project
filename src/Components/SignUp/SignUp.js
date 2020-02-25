@@ -11,6 +11,7 @@ import Typography from '@material-ui/core/Typography';
 
 import Container from '@material-ui/core/Container';
 import { signUpUser } from '../../Actions/Course';
+import Navbar from '../Header/Navbar';
 
 
 export default class SignUp extends Component {

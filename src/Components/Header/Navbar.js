@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from "react-router-dom";
 import { connect } from 'react-redux';
-import { getMenuCourse, getCourseFromMenu, searchCourse } from '../../Actions/Course';
+import { getMenuCourse, getCourseFromMenu } from '../../Actions/Course';
 import Button from '@material-ui/core/Button';
 import _ from 'lodash';
 class Navbar extends Component {
@@ -16,10 +16,8 @@ class Navbar extends Component {
         this.props.getMenuCourse();
         this.props.getCourseFromMenu()
         if (!_.isEmpty(localStorage)) {
-            this.state.userName = JSON.parse(localStorage.getItem("currentUser")).taiKhoan;
+            this.state.userName = JSON.parse(localStorage.getItem("currentUser")).taiKhoan ;
         }
-        
-
     }
     onLogOut = () => {
         localStorage.removeItem('currentUser');
@@ -58,7 +56,6 @@ class Navbar extends Component {
                             <div className="dropdown">
                                 <a className="dropdown-toggle" data-toggle="dropdown"/>
                                     Courses
-  
                                 <div className="dropdown-menu">
                                 {element}
                                 <div className="dropdown-menu">

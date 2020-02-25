@@ -17,7 +17,7 @@ export default class Announcements extends Component {
 
                     <div className="carousel-inner">
                         <div className="carousel-item active">
-                            <img src="http://learningzone.themescustom.com/pluginfile.php/5/user/icon/learningzone/f2?rev=232" />
+                            <img atl="" src="http://learningzone.themescustom.com/pluginfile.php/5/user/icon/learningzone/f2?rev=232" />
                             <p className="font-weight-bold">Enjoy New Dashboard with tot's of New Features</p>
                             <div>
                                 <a href="#">Admin User</a>
@@ -31,7 +31,7 @@ export default class Announcements extends Component {
                             </div>
                         </div>
                         <div className="carousel-item">
-                            <img src="http://learningzone.themescustom.com/pluginfile.php/5/user/icon/learningzone/f2?rev=232" />
+                            <img alt="" src="http://learningzone.themescustom.com/pluginfile.php/5/user/icon/learningzone/f2?rev=232" />
                             <p className="font-weight-bold">Creating Dynamic Color Schemes with Theme Options.</p>
                             <div>
                                 <a href="#">Admin User</a>

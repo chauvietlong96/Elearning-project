@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {getMenuCourse, getCourses} from '../../../Actions/Course';
-import {chuaGhiDanh} from '../../../Actions/adminGhiDanh';
+import {getChoXetDuyet, xacThucGhiDanh} from '../../../Actions/adminGhiDanh';
 import _ from "lodash";
 
 
-class ChuaGhiDanh extends Component {
+class WaitReview extends Component {
 
     constructor(props) {
         super(props);
@@ -30,12 +30,16 @@ class ChuaGhiDanh extends Component {
 
     onSearch = () => {
         const maKhoaHoc = _.omit(this.state, ["maDanhMuc"])
-        this.props._chuaGhiDanh(maKhoaHoc)
+        this.props._getChoXetDuyet(maKhoaHoc)
+    }
+
+    xacNhan = (data) => {
+        xacThucGhiDanh(data)
     }
 
     render() {
 
-        const {courseCate,courses, chuaGhiDanhList } = this.props;
+        const {courseCate,courses, choXetDuyetList } = this.props;
         const elmCate = courseCate.map( (cate, index) => {
             return <option key={index} value={cate.maDanhMuc}>{cate.tenDanhMuc}</option>
         })
@@ -44,12 +48,15 @@ class ChuaGhiDanh extends Component {
             return <option key={index} value={course.maKhoaHoc}>{course.maKhoaHoc}</option>
         })
 
-        const elmChuaGhiDanh = chuaGhiDanhList.map( (item, index) => {
+        const elmChoXetDuyet = choXetDuyetList.map( (item, index) => {
             return (
                 <tr>
                     <td>{item.taiKhoan}</td>
                     <td>{item.matKhau}</td>
                     <td>{item.biDanh}</td>
+                    <td>
+                        <button className="btn btn-primary" onClick={() => this.xacNhan({maKhoaHoc: this.state.MaKhoaHoc, taiKhoan: item.taiKhoan})}>Xác nhận ghi danh</button>
+                    </td>
             </tr>
             )
             
@@ -81,7 +88,7 @@ class ChuaGhiDanh extends Component {
                         </tr>
                     </thead>
                 <tbody>
-                    {elmChuaGhiDanh}
+                    {elmChoXetDuyet}
                 </tbody>
             </table>
             </div>
@@ -93,7 +100,7 @@ const mapStateToProps = (state) => {
     return {
         courseCate: state.courseMenu,
         courses: state.courses,
-        chuaGhiDanhList: state.chuaGhiDanhList,
+        choXetDuyetList: state.choXetDuyetList,
     }
 }
 
@@ -105,10 +112,10 @@ const mapDispatchToProps = (dispatch) => {
         _getCourses: () => {
             dispatch(getCourses())
         },
-        _chuaGhiDanh: (maKhoaHoc) => {
-            dispatch(chuaGhiDanh(maKhoaHoc))
+        _getChoXetDuyet: (maKhoaHoc) => {
+            dispatch(getChoXetDuyet(maKhoaHoc))
         }
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ChuaGhiDanh)
+export default connect(mapStateToProps, mapDispatchToProps)(WaitReview)

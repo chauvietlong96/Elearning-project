@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
@@ -39,6 +38,7 @@ import { connect } from 'react-redux';
   render() {
     return (
       <>
+      
         <Container component="main" maxWidth="xs">
           <CssBaseline />
           <div className="paper">

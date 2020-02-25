@@ -7,13 +7,13 @@ export default class Carousel extends Component {
                 <div id="carouselExampleFade" className="my-carousel carousel slide carousel-fade" data-ride="carousel" data-pause="false" data-interval="4000">
                     <div className="carousel-inner">
                         <div className="carousel-item active">
-                            <img className="d-block w-100" src="http://learningzone.themescustom.com/theme/image.php/learningzone/theme/1556102214/banner2image" alt="abc" />
+                            <img  className="d-block w-100" src="http://learningzone.themescustom.com/theme/image.php/learningzone/theme/1556102214/banner2image" alt="abc" />
                         </div>
                         <div className="carousel-item">
-                            <img className="d-block w-100" src="http://learningzone.themescustom.com/theme/image.php/learningzone/theme/1556102214/banner1image" alt="xyz" />
+                            <img  className="d-block w-100" src="http://learningzone.themescustom.com/theme/image.php/learningzone/theme/1556102214/banner1image" alt="xyz" />
                         </div>
                         <div className="carousel-item">
-                            <img className="d-block w-100" src="http://learningzone.themescustom.com/theme/image.php/learningzone/theme/1556102214/banner3image" alt="Third slide" />
+                            <img  className="d-block w-100" src="http://learningzone.themescustom.com/theme/image.php/learningzone/theme/1556102214/banner3image" alt="Third slide" />
                         </div>
                     </div>
 
@@ -30,28 +30,28 @@ export default class Carousel extends Component {
                 </p>
                     <div className="carousel-bottom__statistic d-flex justify-content-between container">
                         <div className="carousel-bottom__item d-flex flex-row align-items-center">
-                            <img src="http://learningzone.themescustom.com/theme/image.php/learningzone/theme/1556102214/icon-1" />
+                            <img alt="" src="http://learningzone.themescustom.com/theme/image.php/learningzone/theme/1556102214/icon-1" />
                             <div className="carousel-bottom__item__text d-flex flex-column">
                                 <span>52,147</span>
                                 <span className="font-weight-bold">Active Students</span>
                             </div>
                         </div>
                         <div className="carousel-bottom__item d-flex flex-row align-items-center">
-                            <img src="http://learningzone.themescustom.com/theme/image.php/learningzone/theme/1556102214/icon-2" />
+                            <img alt="" src="http://learningzone.themescustom.com/theme/image.php/learningzone/theme/1556102214/icon-2" />
                             <div className="carousel-bottom__item__text d-flex flex-column">
                                 <span>10,397</span>
                                 <span className="font-weight-bold">Awards Winning</span>
                             </div>
                         </div>
                         <div className="carousel-bottom__item d-flex flex-row align-items-center">
-                            <img src="http://learningzone.themescustom.com/theme/image.php/learningzone/theme/1556102214/icon-3" />
+                            <img alt="" src="http://learningzone.themescustom.com/theme/image.php/learningzone/theme/1556102214/icon-3" />
                             <div className="carousel-bottom__item__text d-flex flex-column">
                                 <span>30,897</span>
                                 <span className="font-weight-bold">Years of History</span>
                             </div>
                         </div>
                         <div className="carousel-bottom__item d-flex flex-row align-items-center">
-                            <img src="http://learningzone.themescustom.com/theme/image.php/learningzone/theme/1556102214/icon-4" />
+                            <img alt="" src="http://learningzone.themescustom.com/theme/image.php/learningzone/theme/1556102214/icon-4" />
                             <div className="carousel-bottom__item__text d-flex flex-column">
                                 <span>46,034</span>
                                 <span className="font-weight-bold">Library Books</span>

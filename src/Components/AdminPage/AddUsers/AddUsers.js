@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { addUsers, updateUser, getUsers } from '../../../Actions/Admin';
+import { addUsers, updateUser } from '../../../Actions/Admin';
 import { connect } from 'react-redux';
 import _ from 'lodash';
 

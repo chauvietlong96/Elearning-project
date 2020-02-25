@@ -1,7 +1,7 @@
 import api from '../API';
 import * as Types from '../Constants';
 
-export const chuaGhiDanh = (maKhoaHoc) => {
+export const notRegister = (maKhoaHoc) => {
     const user = JSON.parse(localStorage.getItem("currentUser"));
     api.defaults.headers.common['Authorization'] = 'Bearer ' + user.accessToken;
 

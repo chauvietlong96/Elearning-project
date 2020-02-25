@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
+import {khoaHocChoXetDuyet} from '../../../Actions/adminGhiDanh';
 import {connect} from "react-redux";
 import {getUsers} from "../../../Actions/Admin";
-import {khoaHocDaGhiDanh} from '../../../Actions/adminGhiDanh';
 
-class KhoaHocDaGhiDanh extends Component {
-
+class WaitReviewCourse extends Component {
     constructor (props) {
         super(props);
         this.state = {
@@ -23,17 +22,17 @@ class KhoaHocDaGhiDanh extends Component {
     }
 
     onSearch = (maKhoaHoc) => {
-        this.props._khoaHocDaGhiDanh(maKhoaHoc)
+        this.props._khoaHocChoXetDuyet(maKhoaHoc)
     }
 
     render() {
 
-        const {users, khoaHocDaGhiDanh} = this.props;
+        const {users, khoaHocChoXetDuyet} = this.props;
         const elmUser = users.map( (user, index) => {
             return <option value={user.taiKhoan} key={index}>{user.taiKhoan}</option>
         })
         
-        const elmDaGhiDanh = khoaHocDaGhiDanh.map( (khoaHoc, index) => {
+        const elmChoXetDuyet = khoaHocChoXetDuyet.map( (khoaHoc, index) => {
             return (
                 <tr>
                     <td>{khoaHoc.maKhoaHoc}</td>
@@ -48,12 +47,12 @@ class KhoaHocDaGhiDanh extends Component {
                 <div className="admin-content-header">
                 <lable htmlFor="" className="px-3">Tài khoản:</lable>
                 <select name="TaiKhoan" onChange={this.onChange} className="px-3 mx-3">
-                    <option selected disabled>Chọn danh mục</option>
+                    <option selected disabled>Chọn tài khoản</option>
                     {elmUser}
                 </select>
 
                 <button className="btn btn-success" onClick={() => this.onSearch(this.state)}>Search</button>
-              </div>
+                </div>
                 <table className="table table-striped">
                     <thead>
                         <tr>
@@ -64,7 +63,7 @@ class KhoaHocDaGhiDanh extends Component {
                         </tr>
                     </thead>
                 <tbody>
-                    {elmDaGhiDanh}
+                    {elmChoXetDuyet}
                 </tbody>
             </table>
             </div>
@@ -75,7 +74,7 @@ class KhoaHocDaGhiDanh extends Component {
 const mapStateToProps = (state) => {
     return {
         users: state.users,
-        khoaHocDaGhiDanh: state.khoaHocDaGhiDanh,
+        khoaHocChoXetDuyet: state.khoaHocChoXetDuyet,
     }
 }
 
@@ -84,10 +83,11 @@ const mapDispatchToProps = (dispatch) => {
         _getUsers: () => {
             dispatch(getUsers())
         },
-        _khoaHocDaGhiDanh: (maKhoaHoc) => {
-            dispatch(khoaHocDaGhiDanh(maKhoaHoc))
+        _khoaHocChoXetDuyet: (maKhoaHoc) => {
+            dispatch(khoaHocChoXetDuyet(maKhoaHoc))
         }
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(KhoaHocDaGhiDanh)
+export default connect(mapStateToProps, mapDispatchToProps)(WaitReviewCourse)
+

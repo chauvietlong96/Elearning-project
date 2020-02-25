@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import {connect} from "react-redux";
+import {connect} from 'react-redux';
 import {getMenuCourse, getCourses} from '../../../Actions/Course';
-import {getDaGhiDanhKhoaHoc, xacThucGhiDanh} from '../../../Actions/adminGhiDanh';
+import {notRegister} from '../../../Actions/adminGhiDanh';
 import _ from "lodash";
 
-class DaGhiDanh extends Component {
+
+class NotRegister extends Component {
 
     constructor(props) {
         super(props);
@@ -15,9 +16,9 @@ class DaGhiDanh extends Component {
     }
 
     componentDidMount() {
-        this.props._getCourses();
-        this.props._getCourseCate();
-        this.onSearch();
+        this.props._getCourses()
+        this.props._getCourseCate()
+        this.onSearch()
     }
 
     onChange = (e) => {
@@ -29,29 +30,26 @@ class DaGhiDanh extends Component {
 
     onSearch = () => {
         const maKhoaHoc = _.omit(this.state, ["maDanhMuc"])
-        this.props._getDaGhiDanhKhoaHoc(maKhoaHoc)
+        this.props._notRegister(maKhoaHoc)
     }
-
-    
 
     render() {
 
-        const {courseCate,courses, daGhiDanhList } = this.props;
+        const {courseCate,courses, chuaGhiDanhList } = this.props;
         const elmCate = courseCate.map( (cate, index) => {
-            return  <option key={index} value={cate.maDanhMuc}>{cate.tenDanhMuc}</option>
+            return <option key={index} value={cate.maDanhMuc}>{cate.tenDanhMuc}</option>
         })
 
         const elmCourseByCate = courses.filter( (course) => this.state.maDanhMuc === course.danhMucKhoaHoc.maDanhMucKhoahoc).map((course, index) => {
             return <option key={index} value={course.maKhoaHoc}>{course.maKhoaHoc}</option>
         })
 
-        const elmDaGhiDanh = daGhiDanhList.map( (item, index) => {
+        const elmChuaGhiDanh = chuaGhiDanhList.map( (item, index) => {
             return (
                 <tr>
                     <td>{item.taiKhoan}</td>
                     <td>{item.matKhau}</td>
                     <td>{item.biDanh}</td>
-                    
             </tr>
             )
             
@@ -60,15 +58,15 @@ class DaGhiDanh extends Component {
         return (
             <div className="admin-content">
                 <div className="admin-content-header">
-                <lable htmlFor="" className="px-3">Danh mục</lable>
-                <select name="maDanhMuc" onChange={this.onChange} className="mx-3">
-                {/* <option selected disabled>Chọn danh mục</option> */}
+                <lable htmlFor="">Danh mục</lable>
+                <select name="maDanhMuc" onChange={this.onChange}>
+                    {/* <option selected disabled>Chọn danh mục</option> */}
                     {elmCate}
                 </select>
 
-                <lable htmlFor="" className="px-3">Khóa học:</lable>
-                <select name="MaKhoaHoc" onChange={this.onChange} className="mx-3">
-                    {/* <option selected>Chọn khóa học</option> */}
+                <lable htmlFor="">Khóa học</lable>
+                <select name="MaKhoaHoc" onChange={this.onChange}>
+                    {/* <option selected disabled>Chọn khóa học</option> */}
                     {elmCourseByCate}
                 </select>
 
@@ -80,11 +78,10 @@ class DaGhiDanh extends Component {
                         <th>Tài khoản</th>
                         <th>Mật khẩu</th>
                         <th>Bí danh</th>
-                        <th></th>
                         </tr>
                     </thead>
                 <tbody>
-                    {elmDaGhiDanh}
+                    {elmChuaGhiDanh}
                 </tbody>
             </table>
             </div>
@@ -96,7 +93,7 @@ const mapStateToProps = (state) => {
     return {
         courseCate: state.courseMenu,
         courses: state.courses,
-        daGhiDanhList: state.daGhiDanhList,
+        chuaGhiDanhList: state.chuaGhiDanhList,
     }
 }
 
@@ -108,10 +105,10 @@ const mapDispatchToProps = (dispatch) => {
         _getCourses: () => {
             dispatch(getCourses())
         },
-        _getDaGhiDanhKhoaHoc: (maKhoaHoc) => {
-            dispatch(getDaGhiDanhKhoaHoc(maKhoaHoc))
+        _notRegister: (maKhoaHoc) => {
+            dispatch(notRegister(maKhoaHoc))
         }
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(DaGhiDanh)
+export default connect(mapStateToProps, mapDispatchToProps)(NotRegister)
