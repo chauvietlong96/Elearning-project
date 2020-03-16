@@ -1,5 +1,5 @@
 .course{
-    height: 800px;
+    height: 500px;
 }
 .course-header{
     position: fixed;
@@ -23,7 +23,7 @@
     padding-top: 85px;
     
     .course-content{
-        height: 70%;
+        height: 100%;
         width: 70%;
         text-align: center;
         .course-name{
@@ -37,11 +37,13 @@
             font-size: 30px;
             margin: auto;
             color: black;
-            height: 20%;
+            height: 50%;
             width: 70%;
         }
         .course-botton{
             height: 10% !important;
+            margin-bottom: 10px;
+            background-color:#2a2c2e;
         }
     }
     .course-detail__media{

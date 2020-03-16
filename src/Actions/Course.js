@@ -124,31 +124,34 @@ export const updateUser = (dataUser, callback) => {
         .catch(err => console.log(err.response.data))
 }
 
-export const signUpCourse = (dataCourse) => {
+export const signUpCourse = (dataCourse, callback) => {
     const user = JSON.parse(localStorage.getItem("currentUser"));
     console.log(user)
     api.defaults.headers.common["Authorization"] = 'Bearer ' + user.accessToken;
     api
         .post("/QuanLyKhoaHoc/DangKyKhoaHoc", dataCourse)
         .then(res => {
-            console.log(res.data);
+            console.log("khong thanh cong" , res.data);
             alert("Đăng ký khóa học thành công")
+            callback(res.data)
         })
         .catch(err => {
             console.log(err.response.data);
+            console.log("thanh cong" );
             alert(`${err.response.data}`)
         })
 }
 
-export const cancelCourse = (dataCourse) => {
+export const cancelCourse = (dataCourse, callback) => {
     const user = JSON.parse(localStorage.getItem("currentUser"));
     console.log(user)
     api.defaults.headers.common["Authorization"] = 'Bearer ' + user.accessToken;
     api
-        .post("/api/QuanLyKhoaHoc/HuyGhiDanh", dataCourse)
+        .post("/QuanLyKhoaHoc/HuyGhiDanh", dataCourse)
         .then(res => {
-            console.log(res.data);
+            console.log("Hủy thành công",res.data);
             alert("Hủy đăng ký khóa học thành công")
+            callback(res.date)
         })
         .catch(err => {
             console.log(err.response.data);

@@ -24,12 +24,10 @@ class SearchCourse extends Component {
 
     render() {
         return (
-
             <div>
-                <input type="text" placeholder="Search.." name="tenKhoaHoc" onChange={this.onChange} />
+                <input type="text" placeholder="Search..." name="tenKhoaHoc" onChange={this.onChange} />
                 <button className="btn btn-primary my-search-btn" onClick={() => this.onSearch(this.state.tenKhoaHoc)}>Search</button>
             </div>
-
         )
     }
 }

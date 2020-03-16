@@ -36,7 +36,7 @@ function CourseItem(props) {
                 {/* <Button size="small" color="primary">
                     Share
         </Button> */}
-                <Link to = "/course-detail"><Button size="small" color="primary" onClick = {getDetail}>
+                <Link to = "/course-detail" ><Button size="small" color="primary" onClick = {getDetail}>
                     Detail
         </Button></Link>
             </CardActions>
